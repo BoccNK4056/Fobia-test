@@ -196,7 +196,7 @@ function loadFail() {
               checkNuseEvent();
               barContainer.style.display = "none";
               razreshit();
-          }, 1000); // ← ИСПРАВЛЕНО: было 1000, стало 3000
+          }, 3000); // ← ИСПРАВЛЕНО: было 1000, стало 3000
       }
    }
 }
