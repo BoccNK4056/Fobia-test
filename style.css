@@ -1,0 +1,243 @@
+/* style.css — Хоррор-стиль для Fobia */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    line-height: 1.5;
+    padding: 20px;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='none' stroke='%23060' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+    animation: subtleFlicker 0.8s infinite alternate;
+}
+
+/* Мерцающий заголовок */
+#welcome {
+    font-family: 'Creepster', cursive;
+    font-size: 48px;
+    color: #ff0033;
+    text-align: center;
+    text-shadow: 0 0 12px rgba(255, 0, 51, 0.8);
+    margin: 20px 0 10px;
+    animation: flicker 2.5s infinite alternate-reverse;
+}
+
+#gg {
+    text-align: center;
+    color: #0a0;
+    margin-bottom: 30px;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+/* Стиль компьютера */
+.computer {
+    background: #050505;
+    border: 2px solid #0f0;
+    border-radius: 6px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto 30px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.15);
+    position: relative;
+}
+
+.computer h4 {
+    margin-bottom: 15px;
+    color: #0f0;
+}
+
+.computer button {
+    background: #111;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 8px 16px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.computer button:hover {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 10px #0f0;
+}
+
+/* Сообщение об ошибке */
+#message {
+    color: #ff000a;
+    margin-top: 12px;
+    min-height: 24px;
+    font-size: 20px;
+}
+
+/* Анимированная полоса загрузки */
+#loadingBarContainer {
+    width: 100%;
+    height: 12px;
+    background-color: #111;
+    border: 1px solid #080;
+    border-radius: 6px;
+    margin: 15px 0;
+    overflow: hidden;
+    display: none; /* изначально скрыта */
+}
+
+#loadingBar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #0a0, #0f0, #0a0);
+    border-radius: 5px;
+}
+
+/* Кнопка шкафа */
+button.closet {
+    background: #300;
+    color: #f00;
+    border: 1px solid #f00;
+    padding: 10px 20px;
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+button.closet:hover {
+    background: #f00;
+    color: #000;
+    box-shadow: 0 0 15px #f00;
+}
+
+/* Кнопка "Выйти" */
+button:not(.closet) {
+    background: #002;
+    color: #0af;
+    border: 1px solid #0af;
+    padding: 10px 20px;
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.4);
+}
+
+button:not(.closet):hover {
+    background: #0af;
+    color: #000;
+    box-shadow: 0 0 15px #0af;
+}
+
+/* Состояние "в шкафу" */
+#mHide {
+    text-align: center;
+    color: #f00;
+    font-size: 20px;
+    margin: 15px 0;
+    min-height: 24px;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+/* Анимации */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 12px rgba(255, 0, 51, 0.8);
+    }
+    20%, 24%, 55% {
+        opacity: 0.6;
+        text-shadow: 0 0 2px rgba(255, 0, 51, 0.3);
+    }
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes subtleFlicker {
+    0%, 100% { background-color: #000; }
+    50% { background-color: #000500; }
+}
+
+#outClosetBtn {
+    display: none;
+}
+
+#flicker-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+#fixedPanel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    color: #0f0;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 10px;
+    border: 2px solid #0f0;
+}
+
+#inventory {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    color: #0f0;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 10px;
+    border: 2px solid #0f0;
+}
+
+#dim-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;     /* чёрный фон */
+    opacity: 0;                 /* изначально прозрачный */
+    pointer-events: none;       /* не мешает кликам */
+    z-index: 9000;              /* под модальными окнами, но над контентом */
+}
+
+
+
+#commandInput {
+    background: #000000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 8px 16px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
