@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Заголовок страницы</title>
+</head>
+<body>
+    <div id="lobby">
+        <p id="welcome">Добро пожаловать в Fobia</p>
+    <p id="gg">Хорошей игры!</p>
+        <button onclick="start()">Start</button>
+        <div id="commandPanel">
+       <input type="input" id="commandInput" value="Your command here!">
+       <button onclick="checkCommand()">Check</button>
+    </div>
+    </div>
+    
+    <!-- Комната 1 (основная) -->
+    <div id="room1" style="display: none">
+    
+    <div class="computer" id="computer">
+    <h4 id="scorerTitle">Загружено файлов: <span id="scorerFail">0</span></h4>
+    <button onclick="loadFail()" id="btn">Загрузить файл</button>
+    
+    <!-- Анимированная полоса загрузки -->
+    <div id="loadingBarContainer">
+        <div id="loadingBar"></div>
+    </div>
+    
+    <p id="message"></p>
+</div>
+    
+    <button id="cap" onclick="drink()">Чашка кофе</button>
+    <p id="capTxt"></p>
+    
+    <p id="mHide"></p>
+    <button onclick="outCloset()" id="outClosetBtn">Выйти</button>
+    <button class="closet" onclick="hiding()" id="closet">Шкаф</button>
+    <p></p>
+    <button onclick="right1()" id="rightBtn1"> <== </button>
+    <button onclick="left2()" id="leftBtn1"> ==> </button>
+    <div id="commandPanel">
+       <input type="input" id="commandInput" value="Your command here!">
+       <button onclick="checkCommand()">Check</button>
+    </div>
+    </div>
+    
+    
+    <!-- Комната 2 (справа) -->
+    <div id="room2" style="display: none">
+        <button onclick="lightOn()">Включить свет <span id="lightSc">0</span>/20</button>
+       <div id="commandPanel">
+       <input type="input" id="commandInput" value="Your command here!">
+       <button onclick="checkCommand()">Check</button>
+    </div> 
+        
+        
+        
+        
+        
+        <button onclick="right3()" id="rightBtn2"> <== </button>
+    <button onclick="left4()" id="leftBtn2"> ==> </button>
+    </div>
+    
+    
+    <!-- Комната 3 (слева) -->
+    <div id="room3" style="display: none">
+        <button onclick="makeCoffee()">Кофеварка</button>
+        <p id="capMakeTxt"></p>
+        <div id="commandPanel">
+       <input type="input" id="commandInput" value="Your command here!">
+       <button onclick="checkCommand()">Check</button>
+    </div>
+        
+        
+        
+        
+        <button onclick="right5()" id="rightBtn3"> <== </button>
+    <button onclick="left6()" id="leftBtn3"> ==> </button>
+    </div>
+    
+    
+    <div id="badGuiWorld" style="display: none">=)</div>
+    
+    
+    <div id="win1" style="display: none">okno1</div>
+    
+    
+    <div id="win2" style="display: none">okno2</div>
+    
+    <div id="fixedPanel">
+        <p>Инвентарь</p>
+        <button onclick="openInventory()">Открыть</button>
+    </div>
+    
+    <div id="inventory" style="display: none">
+        <p>Выберите инструмент: </p>
+        <button id="tool1" style="display: none">1</button>
+    </div>
+    
+    
+    
+    
+    <div id="dim-overlay"></div>
+    <div id="flicker-overlay"></div>
+    <script src="game.js"></script>
+</body>
+  </html>
